@@ -2,7 +2,6 @@ package uwu.zellzik.basic;
 
 import lombok.Getter;
 import net.dv8tion.jda.api.JDABuilder;
-import net.dv8tion.jda.api.requests.GatewayIntent;
 import uwu.zellzik.listeners.ButtonClickListener;
 import uwu.zellzik.listeners.GuildMessageReceivedListener;
 import uwu.zellzik.managers.CommandManager;
@@ -22,8 +21,9 @@ public class DiscordApp {
 
     public DiscordApp() {
         instance = this;
+
         try {
-            JDABuilder.createDefault("TOKEN")
+            JDABuilder.createDefault("token") //Add bot token
                     .addEventListeners(new ButtonClickListener(), new GuildMessageReceivedListener())
                     .setAutoReconnect(true)
                     .build();

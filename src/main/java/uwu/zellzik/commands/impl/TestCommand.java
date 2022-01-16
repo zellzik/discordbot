@@ -16,11 +16,6 @@ public class TestCommand extends Command {
 
     @Override
     public void execute(GuildMessageReceivedEvent event, String... arguments) {
-        event.getMessage().getChannel().sendMessage("""    
-                         
-                Kliknij, aby się poprawnie zweryfikować!
-                
-                """).setActionRow(Button.success("verification", "Zweryfikuj się")).queue();
-
+        event.getMessage().getChannel().sendMessage("Kliknij przycisk poniżej, aby się zweryfikować.").setActionRow(Button.success("verify", "Zweryfikuj się")).queue();
     }
 }

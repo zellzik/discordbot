@@ -15,7 +15,7 @@ public class GuildMessageReceivedListener extends ListenerAdapter {
         if (event.getAuthor().isBot()) return;
 
         String messageContent = event.getMessage().getContentRaw();
-        if (messageContent.length() == 0) return;
+        if (messageContent.length() == 0) return; //It can be a file without any message
 
         if (messageContent.charAt(0) != DiscordApp.prefix) return;
 
