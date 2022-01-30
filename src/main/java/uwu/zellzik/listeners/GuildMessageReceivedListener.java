@@ -14,12 +14,12 @@ public class GuildMessageReceivedListener extends ListenerAdapter {
     public void onGuildMessageReceived(@NotNull GuildMessageReceivedEvent event) {
         if (event.getAuthor().isBot()) return;
 
-        String messageContent = event.getMessage().getContentRaw();
+        var messageContent = event.getMessage().getContentRaw();
         if (messageContent.length() == 0) return; //It can be a file without any message
 
         if (messageContent.charAt(0) != DiscordApp.prefix) return;
 
-        String[] args = messageContent.substring(1).split(" ");
+        var args = messageContent.substring(1).split(" ");
         DiscordApp.instance.getCommandManager().get(args[0]).ifPresent(value -> value.execute(event, args));
     }
 }

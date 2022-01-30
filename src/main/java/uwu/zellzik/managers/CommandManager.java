@@ -13,7 +13,7 @@ import java.util.Optional;
  */
 
 public class CommandManager {
-    private final List<Command> commands = List.of(new TestCommand()); //Here you register the commands ¯\_(ツ)_/¯
+    private final List<Command> commands = List.of(new TestCommand()); //Class registration
 
     public Optional<Command> get(final String name) {
         return commands.stream().filter(command -> command.getCommandName().equalsIgnoreCase(name)).findFirst();
