@@ -23,7 +23,7 @@ public class DiscordApp {
         instance = this;
 
         try {
-            JDABuilder.createDefault("token") //Add bot token
+            JDABuilder.createDefault(" ") //Add bot token
                     .addEventListeners(new ButtonClickListener(), new GuildMessageReceivedListener())
                     .setAutoReconnect(true)
                     .build();

@@ -14,7 +14,7 @@ public class ButtonClickListener extends ListenerAdapter {
 
         switch (event.getComponentId()) {
             case "verify" -> {
-                event.getGuild().addRoleToMember(event.getMember(), event.getGuild().getRoleById(000000000000000000L)).queue(); //Change role id
+             event.getGuild().addRoleToMember(event.getMember(), event.getGuild().getRoleById(" ")).queue(); //Add role to member
             }
         }
     }
